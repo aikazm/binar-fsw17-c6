@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partial/head') %>
+
+<body>
+  <%- include('partial/navbar') %>
+  <div class="container-fluid">
+    <h1 class="text-center">Add New Entry</h1>
+    <div class="">
+      <form action="/add" method="POST">
+        <input class="form-control w-100" type="text" name="username" placeholder="Input Username">
+        <input class="form-control w-100 mt-2" type="email" name="email" placeholder="Input Email">
+        <input class="form-control w-100 mt-2" type="password" name="password" placeholder="Input Password">
+        <input class="form-control w-100 mt-2" type="number" name="age" placeholder="Input Age">
+        <input class="form-control w-100 mt-2" type="text" name="city" placeholder="Input City">
+        <input class="form-control w-100 mt-2" type="number" name="win" placeholder="Input Win">
+        <input class="form-control w-100 mt-2" type="number" name="lose" placeholder="Input Lose">
+        <div class="text-center mt-2">
+          <button class="btn btn-primary btn-lg">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

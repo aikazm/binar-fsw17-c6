@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partial/head') %>
+
+<body>
+  <%- include('partial/navbar') %>
+  <div class="container-fluid">
+    <h1 class="text-center">Acount List</h1>
+    <a href="/add">
+      <button class="btn btn-primary mb-2 mt-2">Add Account</button>
+    </a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>City</th>
+          <th>Win</th>
+          <th>Lose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(item => { %>
+        <tr>
+          <td><%= item.uuid %> </td>
+          <td><%= item.username %> </td>
+          <td><%= item.email %> </td>
+          <td><%= item.age %> </td>
+          <td><%= item.city %> </td>
+          <td><%= item.win %> </td>
+          <td><%= item.lose %> </td>
+          <td>
+            <div class="row">
+              <div class="col-6">
+                <a href="/edit?id=<%= item.uuid %>">
+                  <button class="btn btn-warning">
+                    Edit
+                  </button>
+                </a>
+              </div>
+
+              <div class="col-6">
+                <form action="/delete?id=<%= item.uuid %>" method="POST">
+                  <button class="btn btn-danger">
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </div>
+
+
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+      <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
